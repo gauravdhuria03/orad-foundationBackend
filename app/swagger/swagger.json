@@ -1,0 +1,381 @@
+{
+  "swagger": "2.0",
+  "title": "Test Api Swagger",
+  "description": "Swagger Api Tool for Test api",
+  "license": {
+    "name": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
+  },
+  "version": "1.0.0",
+  "host": "localhost:5000",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/user/UserRegistration": {
+      "post": {
+        "tags": [
+          "User Module"
+        ],
+        "summary": "User registration through mobile app upto setp 5",
+        "description": "User registration through mobile app upto setp 5",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User registration through mobile app upto setp 5",
+            "required": "true",
+            "schema": {
+              "$ref": "#definitions/UserRegistration"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#definitions/appResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#definitions/errorResponse"
+            }
+          }
+        }
+      }
+    },
+  
+   
+  
+    "/user/login": {
+      "post": {
+        "tags": [
+          "User Module"
+        ],
+        "summary": "User login",
+        "description": "User login",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User login",
+            "required": "true",
+            "schema": {
+              "$ref": "#definitions/login"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#definitions/appResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#definitions/errorResponse"
+            }
+          }
+        }
+      }
+    },
+   
+    "/user/forgotPassword": {
+      "post": {
+        "tags": [
+          "User Module"
+        ],
+        "summary": "User forgot Password",
+        "description": "User forgot Password",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User forgot Password",
+            "required": "true",
+            "schema": {
+              "$ref": "#definitions/forgotPassword"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#definitions/appResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#definitions/errorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/user/resetPassword": {
+      "post": {
+        "tags": [
+          "User Module"
+        ],
+        "summary": "Reset Password",
+        "description": "Reset Password",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Reset Password",
+            "required": "true",
+            "schema": {
+              "$ref": "#definitions/resetPassword"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "$ref": "#definitions/appResponse"
+          },
+          "400": {
+            "description": "Error",
+            "$ref": "#definitions/errorResponse"
+          }
+        }
+      }
+    },
+    "/user/changePassword": {
+      "post": {
+        "tags": [
+          "User Module"
+        ],
+        "summary": "change Password",
+        "description": "change Password",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "change Password",
+            "required": "true",
+            "schema": {
+              "$ref": "#definitions/changePassword"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "$ref": "#definitions/appResponse"
+          },
+          "400": {
+            "description": "Error",
+            "$ref": "#definitions/errorResponse"
+          }
+        }
+      }
+    },
+    "/user/userLogout": {
+      "post": {
+        "tags": [
+          "User Module"
+        ],
+        "summary": "User Logout ",
+        "description": "User Logout",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User Logout",
+            "required": "true",
+            "schema": {
+              "$ref": "#definitions/userLogout"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#definitions/appResponse"
+            }
+          },
+          "default": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#definitions/errorResponse"
+            }
+          }
+        }
+      }
+    }
+ 
+  
+
+
+  },
+  "_comment": "Complex objects have schema definitions",
+  "definitions": {
+    "appResponse": {
+      "required": "message",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "number"
+        }
+      }
+    },
+    "errorResponse": {
+      "required": "message",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "UserRegistrationStep5": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },       
+        
+        "mobileNumber": {
+          "type": "string"
+        },
+        "dob": {
+          "type": "string",
+          "format": "date"
+        },
+        "ssn": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },        
+        "zipCode": {
+          "type": "string"
+        },        
+        "address": {
+          "type": "string"
+        },
+        "monthlyIncome": {
+          "type": "number"
+        },
+        "sourceOfIncome": {
+          "type": "string"
+        },
+        "incomeFrequency": {
+          "type": "string"
+        },
+        "occupation": {
+          "type": "string"
+        }
+      }
+    },
+  
+ 
+    "login": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "forgotPassword": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        }
+      }
+    },
+    "resetPassword": {
+      "type": "object",
+      "properties": {
+        "password": {
+          "type": "string"
+        },
+        "resetkey": {
+          "type": "string"
+        }
+      }
+    },
+    "changePassword": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+       "oldPassword" :{
+          "type":"string"
+        },
+        "newRepassword": {
+          "type": "string"
+        },
+        "newPassword": {
+          "type": "string"
+        }
+      }
+    }
+   
+  
+  }
+}
