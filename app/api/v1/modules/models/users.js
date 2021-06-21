@@ -12,7 +12,12 @@ const userSchema = new mongoose.Schema({
     firstName: { type: String, default: '' },
     lastName: { type: String, default: '' },
     userName: { type: String, default: '' },
-    mobileNumber: { type: String,default:'' }, 
+    mobileNumber: { type: String,default:'' },
+    street: { type: String,default:'' }, 
+    city: { type: String,default:'' }, 
+    state: { type: String,default:'' }, 
+    country: { type: String,default:'' }, 
+    postalCode: { type: Number,default:'' }, 
     dob:{type:String,default:''}, //YYYY-MM-DD    
     gender: { type: String, enum: ['male', 'female']},    
     deviceType: { type: String, default: "web" }, // web,android,iphone

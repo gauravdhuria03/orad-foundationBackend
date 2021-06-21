@@ -26,7 +26,10 @@ module.exports = {
     changePassword: changePassword,    
     updateDeviceToken: updateDeviceToken,
     updateUserImage: updateUserImage,
-    updateProfile: updateProfile
+    updateProfile: updateProfile,
+    usersList:usersList,
+    getUserDetails:getUserDetails,
+    updateProfileFromBackend:updateProfileFromBackend
    
 };
 
@@ -56,6 +59,44 @@ module.exports = {
     });
     
 };
+
+
+/**
+ * getUserDetails API 
+ * @access private
+ * @return json
+ * Created by sukhdev singh
+ * Created Date 19-06-2021
+ */
+
+ function getUserDetails(req, res) {
+    
+    console.log(req.body.user_id, 'req.body.user_id');
+    async function getUserDetails() {
+        try {
+            let Condition = {
+                _id: mongoose.Types.ObjectId(req.params.id)
+            }
+            console.log(Condition, 'Condition');
+            let UserData = await query.findoneData(User, Condition);
+            
+        
+            if (UserData.status == true && UserData.data) {
+                return res.json(Response(200, constant.messages.user_available, UserData.data));
+            }
+            else {
+                return res.json(Response(500, constant.validateMsg.internalError));
+            }
+        }
+        catch (err) {
+            console.log(err);
+            return res.json(Response(500, constant.validateMsg.internalError, err));
+        }
+
+    }
+    getUserDetails().then(function (data) { });
+}
+
 
 
 
@@ -190,9 +231,9 @@ function updateUserImage(req, res) {
  *  Update user basic info
  * @access private
  * @return json
- * Created by Sukhdev Singh
+ * Created by Gaurav
  * 
- * Created Date 15-April-2021
+ * Created Date 15-06-2021
  */
 function updateProfile(req, res) {
     let userId = req.headers.decoded.userId;
@@ -225,6 +266,58 @@ function updateProfile(req, res) {
         }
     }
     updateProfile().then(function (data) {
+    });
+}
+/**
+ *  Update user basic info from backend
+ * @access private
+ * @return json
+ * Created by Gaurav
+ * 
+ * Created Date 15-06-2021
+ */
+ function updateProfileFromBackend(req, res) {
+    let userId = req.body.userId;
+    console.log("userId====", userId);
+    async function updateProfileFromBackend() {
+        try {
+            let cond = {
+                _id: userId
+            }
+            var userObj = {
+                firstName: req.body.firstName ? req.body.firstName : '',
+                lastName: req.body.lastName ? req.body.lastName : '',
+                street: req.body.street ? req.body.street : '',
+                city: req.body.city ? req.body.city : '',
+                state: req.body.state ? req.body.state : '',
+                country: req.body.country ? req.body.country : '',
+                postalCode: req.body.postalCode ? req.body.postalCode : ''
+                
+            }
+            let finalResult = await query.updateOneDocument(User, cond, userObj);
+            if (!finalResult.status) {
+                return res.json(Response(constant.statusCode.internalservererror, constant.validateMsg.internalError, finalResult.error));
+            }
+            else {
+                
+                finalResult.data.firstName = req.body.firstName;
+                finalResult.data.lastName = req.body.lastName;
+                finalResult.data.street = req.body.street;
+                finalResult.data.city = req.body.city;
+                finalResult.data.state = req.body.state;
+                finalResult.data.country = req.body.country;
+                finalResult.data.postalCode = req.body.postalCode;
+              
+                
+                return res.json(Response(constant.statusCode.ok, constant.statusCode.profileUpdated, finalResult.data));
+            }
+
+        } catch (error) {
+            console.log(error);
+            return res.json(Response(constant.statusCode.internalservererror, constant.validateMsg.internalError));
+        }
+    }
+    updateProfileFromBackend().then(function (data) {
     });
 }
 /**
@@ -272,7 +365,7 @@ function updateDeviceToken(req, res) {
  * Created Date 18-mar-2021
  */
  function adminlogin(req, res) {
-    console.log("login request===============================", req.body)
+    console.log("admin login request===============================", req.body)
     async function adminlogin() {
         try {
             let finalObjectToBeSend = {};
@@ -322,7 +415,7 @@ function updateDeviceToken(req, res) {
                     return res.json(Response(constant.statusCode.forbidden, constant.validateMsg.accountIsNotActive));
                 }
                 else {
-                    return res.json(Response(constant.statusCode.unauth, constant.messages.invalidUserNameOrPwd));
+                    return res.json(Response(constant.statusCode.unauth, constant.validateMsg.invalidUsername));
                 }
             }
             else {
@@ -685,6 +778,39 @@ function UserRegistration(req, res) {
 }
 
 
+/**
+ * Get registered users list 
+ * @access private
+ * @return json
+ * Created by Gaurav Dhuria
+ * Created Date  19-6-2021
+ */
 
+ function usersList(req, res) {
+    async function usersList() {
+        try {
+            
+                let cond = {
+                    userType:'user',
+                    isDeleted: false
+                }
+                // let Userdata = await query.findoneData(Role,{ name: 'Manager', isDeleted: false });
+                let Userdata = await query.fetch_all(User, cond);
+
+                                                         
+
+                    res.json({
+                        code: constant.statusCode.ok,//200,
+                        message: constant.messages.Registration,
+                        data: Userdata
+                    })
+            } catch (error) {
+                console.log("error", error);
+                return res.json(Response(constant.statusCode.notFound));
+
+            }
+    }
+    usersList().then(function (data) { })
+}
 
 

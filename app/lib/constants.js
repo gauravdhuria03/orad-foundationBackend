@@ -16,7 +16,7 @@ const messages = {
     "plans_available":"Plans available",
     "save_card": "Card saved successfully",
     "user_busy":"User is already Busy",
-    "user_available":"Available to connect",
+    "user_available":"User available",
     "commonError": "Something went wrong",
     'ALREADY_REGISTERD':'Email already register',
     'PHONE_ALREADY_REGISTERD':'Phone number already registered',
@@ -48,6 +48,7 @@ const validateMsg = {
     "internalError": "Internal error",
     "requiredFieldsMissing":"required field are missing",
     "invalidEmail": "Invalid Email Given",
+    "invalidUsername": "Invalid Username Given",
     "invalidEmailOrPassword":"Invalid Password Given",
     "accountIsNotActive":"account is not active"
 }
