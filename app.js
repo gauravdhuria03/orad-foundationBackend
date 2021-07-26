@@ -19,9 +19,9 @@ app.use(cors());
 app.use('/apiDocs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'local'; //local server
+//process.env.NODE_ENV = process.env.NODE_ENV || 'local'; //local server
 //process.env.NODE_ENV = process.env.NODE_ENV || 'staging'; //staging servers
-//process.env.NODE_ENV = process.env.NODE_ENV || 'prod'; //local server
+process.env.NODE_ENV = process.env.NODE_ENV || 'prod'; //local server
 
 var logger = require('./logger').logger;
 const config = require('./app/config/config.js').get(process.env.NODE_ENV);

@@ -49,9 +49,9 @@ const config = {
 			password: 'sent65efihgchapp',
 			url: 'mongodb://54.190.192.105:27017/sentefintechapp'
 		},
-		baseUrl: 'http://54.190.192.105:6094',
-		backendBaseUrl: 'http://54.190.192.105:6094',
-		imageBaseUrl: 'http://54.190.192.105:6094',
+		baseUrl: 'https://oradfoundation.azurewebsites.net',
+		backendBaseUrl: 'https://oradfoundation.azurewebsites.net',
+		imageBaseUrl: 'https://oradfoundation.azurewebsites.net',
 		
 		env: 'staging',
 		// smtp: {
@@ -93,9 +93,9 @@ const config = {
 			password: 'patientEngagement123',
 			url: 'mongodb://localhost:27017/patientEngagement'
 		},
-		baseUrl: 'https://mean.stagingsdei.com:5006/',
-		backendBaseUrl: 'https://mean.stagingsdei.com:5006/',
-		imageBaseUrl: 'https://mean.stagingsdei.com:5006',
+		baseUrl: 'https://oradfoundation.azurewebsites.net',
+		backendBaseUrl: 'https://oradfoundation.azurewebsites.net',
+		imageBaseUrl: 'https://oradfoundation.azurewebsites.net',
 		// imageBaseUrl: 'http://54.190.192.105:5006',
 		galileo:{
 			sandboxUrl:'https://sandbox.galileo-ft.com/instant/v1/',
