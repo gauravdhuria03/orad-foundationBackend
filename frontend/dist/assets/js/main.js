@@ -1,39 +1,3 @@
-/** ==========================================================================================
-
-  Project :   Delmont - Responsive Multi-purpose HTML5 Template
-  Version :   Bootstrap 4.1.1
-  Author :    Themetechmount
-
-========================================================================================== */
-
-
-/** ===============
-
-01. Preloader
-02. TopSearch
-03. Fbar-btn
-04. Fixed-header
-05. Menu
-06. Number rotator
-07. Enables menu toggle
-08. Skillbar
-09. Tab
-10. Accordion
-11. twentytwenty[data-orientation]
-12. Isotope
-13. Prettyphoto
-14. owlCarousel
-    .. Testimonial slide
-    .. Blog slide
-    .. Post slide
-    .. Team slide
-    .. Clients-logo
-    .. Portfolio-slide
-    .. Portfolio-img-slide
-
-15. Back to top 
-
- =============== */
 
 
 (function($) {

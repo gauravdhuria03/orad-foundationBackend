@@ -8,27 +8,27 @@ const config = {
 		db: {
 			user: '',
 			password: '',
-			url: 'mongodb://localhost:27017/orad'			
+			url: 'mongodb://localhost:27017/orad'
 		},
 		baseUrl: 'http://localhost:4200/',
 		backendBaseUrl: 'http://localhost:4000/',
-		imageBaseUrl: 'http://localhost:4000',		
-	
+		imageBaseUrl: 'http://localhost:4000',
+
 		env: 'local',
 		smtp: {
 			service: 'gmail',
-			// 'ipage',//'gmail',
+
 			username: 'sentefintech@gmail.com',
-			// 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com',
+
 			password: 'Abc@123#',
-			// 'He@1Med11c',//'smartsdn@#$9059JM',
-			
+
+
 			host: 'smtp.gmail.com',
-			// 'smtp.ipage.com',//'smtp.gmail.com',
+
 			mailUsername: 'sentefintech@gmail.com',
-			// 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com',
+
 			verificationMail: 'sentefintech@gmail.com'
-			// 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com'
+
 		},
 		aws_ses: {
 			accessKeyId: 'AKIAJVVOL6C2WKCDKFTA',
@@ -52,39 +52,15 @@ const config = {
 		baseUrl: 'https://oradfoundation.azurewebsites.net',
 		backendBaseUrl: 'https://oradfoundation.azurewebsites.net',
 		imageBaseUrl: 'https://oradfoundation.azurewebsites.net',
-		
+
 		env: 'staging',
-		// smtp: {
-		// 	service: 'ipage',//'gmail',
-		// 	username: 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com',
-		// 	password: 'He@1Med11c',//'smartsdn@#$9059JM',
-			
-		// 	host: 'smtp.ipage.com',//'smtp.gmail.com',
-		// 	mailUsername: 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com',
-		// 	verificationMail: 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com'
-		// },
 		smtp: {
-			
 			service: 'gmail',
-			// 'ipage',//'gmail',
 			username: 'sentefintech@gmail.com',
-			// 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com',
 			password: 'Abc@123#',
-			// 'He@1Med11c',//'smartsdn@#$9059JM',
-			
-			host: 'smtp.gmail.com',
-			// 'smtp.ipage.com',//'smtp.gmail.com',
 			mailUsername: 'sentefintech@gmail.com',
-			// 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com',
 			verificationMail: 'sentefintech@gmail.com'
-			// 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com'
-		},
-		aws_ses: {
-			accessKeyId: 'AKIAJVVOL6C2WKCDKFTA',
-			secretAccessKey: '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',
-			region: '',
-			fromName: ''
-		},
+		}
 	},
 	prod: {
 		port: 5006,
@@ -96,30 +72,18 @@ const config = {
 		baseUrl: 'https://oradfoundation.azurewebsites.net',
 		backendBaseUrl: 'https://oradfoundation.azurewebsites.net',
 		imageBaseUrl: 'https://oradfoundation.azurewebsites.net',
-		// imageBaseUrl: 'http://54.190.192.105:5006',
-		galileo:{
-			sandboxUrl:'https://sandbox.galileo-ft.com/instant/v1/',
-			username:'vfoZGMdQIDoE', //client's credentials of sukhdev keys
-			password:'1MV8Tf6qBya8kZHMi6Dc',
-			business_id:57511,
-			product_id:19191
-		},
+
+
 		env: 'prod',
 		smtp: {
 			service: 'ipage',//'gmail',
-			username: 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com',
-			password: 'He@1Med11c',//'smartsdn@#$9059JM',
-			
-			host: 'smtp.ipage.com',//'smtp.gmail.com',
-			mailUsername: 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com',
-			verificationMail: 'admin@healmedsolutions.com',//'jitendrak.smartdata@gmail.com'
-		},
-		aws_ses: {
-			accessKeyId: 'AKIAJVVOL6C2WKCDKFTA',
-			secretAccessKey: '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',
-			region: '',
-			fromName: ''
-		},
+			username: 'admin@healmedsolutions.com',
+			password: 'He@1Med11c',
+
+			host: 'smtp.ipage.com',
+			mailUsername: 'admin@healmedsolutions.com',
+			verificationMail: 'admin@healmedsolutions.com',
+		}
 	},
 
 };

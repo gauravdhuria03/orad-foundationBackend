@@ -1,68 +1,9 @@
-/**
-  * Name: Delmont
-  * Version: 1.3
-  * Author: ThemetechMount
-  * Author URI: http://www.themetechmount.com
-*/
+
 
 @import url('https://fonts.googleapis.com/css?family=Saira:100,200,300,400,500,600,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i,700,700i');
 
-/**
 
-  1. General
-     - Variables
-     - Transition
-     - Shadow
-     - Extra-outer
-
-  2. Spacing
-     - Padding
-     - Margin
-
-  3. Color
-     - Skin-color, Skin-bg-color, Skin-border-color
-     - darkGrey-color, darkGrey-bg-color
-     - white-color, white-bg-color, white-border-color
-     - Grey-color, Grey-bg-color, grey-border-color
-     - Extra-color
-
-  4. Pre-loader
-
-  5. TooltipTop
-
-  6. TopBar
-
-  7. Header
-     - SiteBrand(logo)
-     - SiteNavigation(Menu)
-     - ttm-rt-contact(HeaderIcons - Search, Cart)
-     - ttm-search-overlay
-
-  8. Footer
-     - FirstFooter
-     - SecondFooter
- 
-  9. GoTop BUtton
-  
-  10. Page-Title-Row
-
-  12. Inner-Pages
-      - bbpress
-      - team-member-single
-      - Contact_Us_1
-      - Research Single(single style)
-      - Classic_Blog
-      - Single_Blog
-      - Elements_page
-      - Error_page
-      - Map
-
-**/
- 
-/* ===============================================
-    General
-------------------------*/
 
 /** Variables **/
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
