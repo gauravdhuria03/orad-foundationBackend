@@ -12,7 +12,12 @@ const util = require('util'),
     constant = require('../../../../../app/lib/constants'),    
     query = require('../../../../../app/lib/common_query'),
     common = require('../../../../../app/lib/common'),
-    User = require('../models/users');
+    User = require('../models/users'),
+    contacts = require('../models/contacts'),
+    events = require('../models/events'),
+    sponsorship = require('../models/sponsorship'),
+    insider = require('../models/insider');
+   
    
 
 
@@ -31,11 +36,52 @@ module.exports = {
     getUserDetails:getUserDetails,
     updateProfileFromBackend:updateProfileFromBackend,
     deleteFromBackend:deleteFromBackend,
-    changeStatusFromBackend:changeStatusFromBackend
+    changeStatusFromBackend:changeStatusFromBackend,
+    getDashboardCounts:getDashboardCounts
    
 };
 
+/**
+ * function  API 
+ * @access private
+ * @return json
+ * Created by gaurav Dhuria
+ * Created Date 7-01-2021
+ */
 
+ async function getDashboardCounts(req, res) {
+    
+    try {
+        let condition = {
+            isActive:true,
+            isDeleted: false
+        }
+        const usersCount = await User.count(condition);
+        const insiderCount = await insider.count(condition);
+        const sponsorshipCount = await sponsorship.count(condition);
+        const eventsCount = await events.count(condition);
+        const contactsCount = await contacts.count(condition);
+        let dashboardCount={
+            usersCount:usersCount,
+            insiderCount:insiderCount,
+            sponsorshipCount:sponsorshipCount,
+            eventsCount:eventsCount,
+            contactsCount:contactsCount
+        }
+        console.log("out==",dashboardCount);
+            res.json({
+                code: constant.statusCode.ok,
+                data: dashboardCount,
+                message: "Data available"
+            })
+    }
+    catch (err) {
+        console.log(err);
+        return res.json(Response(500, constant.validateMsg.internalError, err));
+    }
+
+
+}
 /**
  * user logout 
  * @access private

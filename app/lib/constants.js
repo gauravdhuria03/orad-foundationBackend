@@ -13,6 +13,7 @@ const statusCode = {
 }
 const messages = {
     "success":"success",
+    "eventupdate":"Event updated successfully",
     "plans_available":"Plans available",
     "save_card": "Card saved successfully",
     "user_busy":"User is already Busy",
@@ -73,7 +74,8 @@ const userTypes = {
 }
 const directoryPath = { 
    // "SERVICEIMAGE": "../backend/app/uploads/",//local
-     "USERIMAGE":"../orad-foundation/uploads/images/users/",
+     "USERIMAGE":"../orad-foundationBackend/uploads/images/users/",
+     "EVENTIMAGE":"../orad-foundationBackend/uploads/images/events/",
     //"SERVICEIMAGE":"/home/jenkins/workspace/SDN_PatientEngagement/backend/app/uploads/",
     "EXTENSIONS":["docx", "doc", "pdf", "xls","xlsx"],
     "ALLOWED":"docx, doc, pdf, xls,xlsx"

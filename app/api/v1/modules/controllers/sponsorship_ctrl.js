@@ -18,10 +18,56 @@ const util = require('util'),
 module.exports = {
    
     getSponsorshipList:getSponsorshipList,
-    deleteFromBackend:deleteFromBackend
+    deleteFromBackend:deleteFromBackend,
+    add:add
 };
 
+/**
+ * add of new sponsor 
+ * @access private
+ * @return json
+ * Created by Gaurav Dhuria
+ * Created Date  12-6-2021
+ */
 
+ function add(req, res) {
+    async function add() {
+        try {                                 
+        var Obj = {
+            companyName: req.body.companyName ? req.body.companyName : '',
+            companyContactName: req.body.companyContactName ? req.body.companyContactName : '',
+            companyPhoneNumber: req.body.companyPhoneNumber ? req.body.companyPhoneNumber : '',
+            email: req.body.email ? req.body.email.trim().toLowerCase() : '',            
+            companyWebsite: req.body.companyWebsite ? req.body.companyWebsite : '', 
+            levelOfSponsership: req.body.levelOfSponsership ? req.body.levelOfSponsership : '', 
+            companyWebsite: req.body.companyWebsite ? req.body.companyWebsite : '',    
+            companyAddress1: req.body.companyAddress1 ? req.body.companyAddress1 : '',    
+            companyAddress2: req.body.companyAddress2 ? req.body.companyAddress2 : '',   
+            comment: req.body.comment ? req.body.comment : '',    
+            updatedAt: moment().unix(),
+            createdAt: moment().unix()
+        };
+    
+        var saveObj = await query.uniqueInsertIntoCollection(SponsorshipModel, Obj);
+        if (!saveObj.status) {
+            return res.json(Response(constant.statusCode.internalservererror, constant.validateMsg.internalError, saveObj.err));
+        } else {                                                                         
+
+            res.json({
+                code: constant.statusCode.ok,//200,
+                message: "Data submitted successfuly",
+                data: saveObj.userData
+            })
+        }              
+            
+        } catch (error) {
+            console.log("error", error);
+            return res.json(Response(constant.statusCode.notFound));
+
+        }
+    }
+    add().then(function (data) { })
+}
 
 /**
  *  Delete sponsorship from backend

@@ -14,6 +14,8 @@ const eventsSchema = new mongoose.Schema({
     }, 
     startDate: { type: Number}, //Unix UTC timestamp of moment
     endDate: { type: Number}, //Unix UTC timestamp of moment
+    startTime: { type: Number}, //Unix UTC timestamp of moment
+    endTime: { type: Number}, //Unix UTC timestamp of moment
     isDeleted: { type: Boolean, default: false },
     isActive: { type: Boolean, default: true }, 
     createdAt: { type: Number}, //Unix UTC timestamp of moment

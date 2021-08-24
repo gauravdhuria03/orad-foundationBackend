@@ -18,11 +18,51 @@ const util = require('util'),
 module.exports = {
    
     getInsiderList:getInsiderList,
-    deleteFromBackend:deleteFromBackend
-   
+    deleteFromBackend:deleteFromBackend,
+    add:add
 };
 
+/**
+ * add of new insider 
+ * @access private
+ * @return json
+ * Created by Gaurav Dhuria
+ * Created Date  12-6-2021
+ */
 
+ function add(req, res) {
+    async function add() {
+        try {                                 
+        var Obj = {
+            firstName: req.body.firstName ? req.body.firstName : '',
+            lastName: req.body.lastName ? req.body.lastName : '',          
+            email: req.body.email ? req.body.email.trim().toLowerCase() : '',            
+            phoneNumber: req.body.phoneNumber ? req.body.phoneNumber : '', 
+            jobTitle: req.body.jobTitle ? req.body.jobTitle : '',           
+            updatedAt: moment().unix(),
+            createdAt: moment().unix()
+        };
+    
+        var saveObj = await query.uniqueInsertIntoCollection(InsiderModel, Obj);
+        if (!saveObj.status) {
+            return res.json(Response(constant.statusCode.internalservererror, constant.validateMsg.internalError, saveObj.err));
+        } else {                                                                         
+
+            res.json({
+                code: constant.statusCode.ok,//200,
+                message: "Data submitted successfuly",
+                data: saveObj.userData
+            })
+        }              
+            
+        } catch (error) {
+            console.log("error", error);
+            return res.json(Response(constant.statusCode.notFound));
+
+        }
+    }
+    add().then(function (data) { })
+}
 /**
  *  Delete insider from backend
  * @access private

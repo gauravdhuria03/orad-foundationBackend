@@ -37,6 +37,32 @@ commonQuery.saltThePassword = function saltThePassword(pwd) {
     })
 }
 
+
+/**
+ * Function is use to Fetch Multiple data with populate
+ * @access private
+ * @return json
+ * Created by Gaurav Dhuria 
+ * Created Date 10-06-2021
+ */
+ commonQuery.findDataWithAggregation = function findDataWithAggregation(model, cond, populate) {
+    return new Promise(function (resolve, reject) {
+        let tempObj = {
+            status: false
+        }
+        model.find(cond).populate(populate).exec(function (err, userData) {
+            if (err) {
+                tempObj.error = err;
+                reject(tempObj);
+            } else {
+                tempObj.status = true;
+                tempObj.data = userData;
+                resolve(tempObj);
+            }
+        });
+    })
+}
+
 commonQuery.findoneDataWithLookup = function findoneDataWithLookup(model, cond) {
     return new Promise(function (resolve, reject) {
          console.log("Errrr= ", cond);
@@ -171,6 +197,9 @@ commonQuery.findDataWithPopulate = function findDataWithPopulate(model, cond, po
         });
     })
 }
+
+
+
 
 
 /**

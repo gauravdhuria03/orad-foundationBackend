@@ -18,10 +18,51 @@ const util = require('util'),
 module.exports = {
    
     getContactsList:getContactsList,
-    deleteFromBackend:deleteFromBackend
+    deleteFromBackend:deleteFromBackend,
+    add:add
 };
 
+/**
+ * add of new contact 
+ * @access private
+ * @return json
+ * Created by Gaurav Dhuria
+ * Created Date  12-6-2021
+ */
 
+ function add(req, res) {
+    async function add() {
+        try {                                 
+        var contObj = {
+            userName: req.body.userName ? req.body.userName : '',
+            cellPhone: req.body.cellPhone ? req.body.cellPhone : '',
+            email: req.body.email ? req.body.email.trim().toLowerCase() : '',
+            subject: req.body.subject ? req.body.subject : '',
+            message: req.body.message ? req.body.message : '',                                                                         
+            updatedAt: moment().unix(),
+            createdAt: moment().unix()
+        };
+    
+        var saveObj = await query.uniqueInsertIntoCollection(ContactsModel, contObj);
+        if (!saveObj.status) {
+            return res.json(Response(constant.statusCode.internalservererror, constant.validateMsg.internalError, saveObj.err));
+        } else {                                                                         
+
+            res.json({
+                code: constant.statusCode.ok,//200,
+                message: "Data submitted successfuly",
+                data: saveObj.userData
+            })
+        }              
+            
+        } catch (error) {
+            console.log("error", error);
+            return res.json(Response(constant.statusCode.notFound));
+
+        }
+    }
+    add().then(function (data) { })
+}
 
 /**
  *  Delete contact from backend
