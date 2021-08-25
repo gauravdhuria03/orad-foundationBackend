@@ -102,6 +102,8 @@ if (config.env == 'local') {
     server = require('http').createServer(app);
 
     // app.set('trust proxy', true)
+}else{
+    server = require('http').createServer(app);
 }
 server.listen(port).timeout = 1800000;
 
