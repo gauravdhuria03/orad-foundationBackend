@@ -55,21 +55,21 @@ const config = {
 	prod: {
 		port: 5006,
 		db: {
-			user: 'patientEngagement',
-			password: 'patientEngagement123',
-			url: 'mongodb://orad:6bNdzStVgS43olgUeaVmpsr2G7tCTx3lDhFMRVsCQyrTo11RVN4JGvADfTd2wkxjJL70u6MDFlRK4B5o3m65ig%3D%3D@orad.mongo.cosmos.azure.com:10255/oradFoundation?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@orad@'
+			user: 'mongoAdmin',
+			password: 'changeMe',
+			url:'mongodb://127.0.0.1:27017/oradFoundation?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@orad@'
+			//url: 'mongodb://orad:6bNdzStVgS43olgUeaVmpsr2G7tCTx3lDhFMRVsCQyrTo11RVN4JGvADfTd2wkxjJL70u6MDFlRK4B5o3m65ig%3D%3D@orad.mongo.cosmos.azure.com:10255/oradFoundation?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@orad@'
 		},
-		baseUrl: 'https://oradfoundation.azurewebsites.net',
-		backendBaseUrl: 'https://oradfoundation.azurewebsites.net',
-		imageBaseUrl: 'https://oradfoundation.azurewebsites.net',
+		baseUrl: 'http://3.141.32.103:5006',
+		backendBaseUrl: 'http://3.141.32.103:5006',
+		imageBaseUrl: 'http://3.141.32.103:5006',
 		env: 'prod',
 		smtp: {
-			service: 'ipage',//'gmail',
-			username: 'admin@healmedsolutions.com',
-			password: 'He@1Med11c',
-			host: 'smtp.ipage.com',
-			mailUsername: 'admin@healmedsolutions.com',
-			verificationMail: 'admin@healmedsolutions.com',
+			service: 'gmail',
+			username: 'sentefintech@gmail.com',
+			password: 'Abc@123#',
+			mailUsername: 'sentefintech@gmail.com',
+			verificationMail: 'sentefintech@gmail.com'
 		}
 	},
 

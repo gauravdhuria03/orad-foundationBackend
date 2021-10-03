@@ -36,28 +36,21 @@ module.exports = function (router) {
     router.post('/sponsorship/delete', sponsorship.deleteFromBackend);
     router.post('/sponsorship/getSponsorshipList', sponsorship.getSponsorshipList);
     router.post('/sponsorship/add', sponsorship.add);
-
     
     /////////////////////insider///////////////////////    
     router.post('/insider/delete', insider.deleteFromBackend);
     router.post('/insider/getInsiderList', insider.getInsiderList);
-    router.post('/insider/add', insider.add);
-    
+    router.post('/insider/add', insider.add);    
     /////////////////////contacts///////////////////////    
     router.post('/contacts/delete', contacts.deleteFromBackend);
     router.post('/contacts/getContactsList', contacts.getContactsList);
-    router.post('/contacts/add', contacts.add);
-    
-    /////////////////////events///////////////////////    
-    
+    router.post('/contacts/add', contacts.add);    
+    /////////////////////events///////////////////////        
     router.post('/events/getEventsList', events.getEventsList);
     router.get('/events/details/:id', events.getEventDetails);
     router.get('/events/categories/getEventsCategoriesList', events.getEventsCategoriesList);
     router.post('/events/updateEvent', events.updateEvent);
     router.post('/events/uploadImage', uploadEvent.single('file'),events.uploadImage);
     router.post('/events/add', events.add);
-
-    
-    
     return router; 
 }
