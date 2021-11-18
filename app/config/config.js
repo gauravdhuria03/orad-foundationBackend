@@ -42,7 +42,6 @@ const config = {
 		baseUrl: 'https://oradfoundation.azurewebsites.net',
 		backendBaseUrl: 'https://oradfoundation.azurewebsites.net',
 		imageBaseUrl: 'https://oradfoundation.azurewebsites.net',
-
 		env: 'staging',
 		smtp: {
 			service: 'gmail',
