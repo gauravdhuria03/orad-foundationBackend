@@ -60,9 +60,9 @@ const config = {
 			url:'mongodb://127.0.0.1:27017/oradFoundation?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@orad@'
 			//url: 'mongodb://orad:6bNdzStVgS43olgUeaVmpsr2G7tCTx3lDhFMRVsCQyrTo11RVN4JGvADfTd2wkxjJL70u6MDFlRK4B5o3m65ig%3D%3D@orad.mongo.cosmos.azure.com:10255/oradFoundation?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@orad@'
 		},
-		baseUrl: 'http://3.141.32.103:5006',
-		backendBaseUrl: 'http://3.141.32.103:5006',
-		imageBaseUrl: 'http://3.141.32.103:5006',
+		baseUrl: 'http://3.138.155.186:5006',
+		backendBaseUrl: 'http://3.138.155.186:5006',
+		imageBaseUrl: 'http://3.138.155.186:5006',
 		env: 'prod',
 		smtp: {
 			service: 'gmail',
