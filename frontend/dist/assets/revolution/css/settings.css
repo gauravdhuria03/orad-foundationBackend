@@ -1,16 +1,3 @@
-	/*-----------------------------------------------------------------------------
-
--	Revolution Slider 5.0 Default Style Settings -
-
-Screen Stylesheet
-
-version:   	5.0.0
-date:      	18/03/15
-author:		themepunch
-email:     	info@themepunch.com
-website:   	http://www.themepunch.com
------------------------------------------------------------------------------*/
-
 
 @font-face {
   font-family: 'revicons';
@@ -262,6 +249,7 @@ website:   	http://www.themepunch.com
 	position:relative;
 	padding:0;
 	overflow:hidden;
+	
 }
 
 .fullwidthbanner-container .fullwidthabanner{

@@ -1,39 +1,3 @@
-/** ==========================================================================================
-
-  Project :   Delmont - Responsive Multi-purpose HTML5 Template
-  Version :   Bootstrap 4.1.1
-  Author :    Themetechmount
-
-========================================================================================== */
-
-
-/** ===============
-
-01. Preloader
-02. TopSearch
-03. Fbar-btn
-04. Fixed-header
-05. Menu
-06. Number rotator
-07. Enables menu toggle
-08. Skillbar
-09. Tab
-10. Accordion
-11. twentytwenty[data-orientation]
-12. Isotope
-13. Prettyphoto
-14. owlCarousel
-    .. Testimonial slide
-    .. Blog slide
-    .. Post slide
-    .. Team slide
-    .. Clients-logo
-    .. Portfolio-slide
-    .. Portfolio-img-slide
-
-15. Back to top 
-
- =============== */
 
 
 (function($) {
@@ -52,7 +16,18 @@
     // $("#status").fadeOut(9000);
 })
 
+$(document).on('click','#site-navigation',function(){
 
+// if($("#menu").is(":visible")){
+//     console.log("hiddeee");
+//     $("#menu").hide();    
+//     return false;
+// } else{    
+//     console.log("show");
+//     $("#menu").show();
+
+// }
+});
 /*------------------------------------------------------------------------------*/
 /* TopSearch
 /*------------------------------------------------------------------------------*/
@@ -124,7 +99,7 @@
     
     var $menu = $('#menu'), $menulink = $('#menu-toggle-form'), $menuTrigger = $('.has-submenu > a');
     $menulink.on('click',function (e) {
-
+       
         $menulink.toggleClass('active');
         $menu.toggleClass('active');
     });
@@ -138,7 +113,7 @@
     $('ul li:has(ul)');
 
 
-    $(document).ready(function() {
+    $(window).load(function() {
 
         if ( matchMedia( 'only screen and (min-width: 1200px)' ).matches ) 
             {
@@ -187,7 +162,7 @@
 
 
 
-    $(document).ready(function() {
+    $(window).load(function() {
 
         if ( matchMedia( 'only screen and (min-width: 1200px)' ).matches ) 
             {
@@ -213,7 +188,7 @@
     });
 
     function delmont_menuhover_item() {
-
+        
         var tm_menu_item,tm_leftmenu,tm_menu_width,tm_parentli_width;
         var tm_sepline=jQuery(".ttm-sepline");
         var active_item=jQuery("#site-header-menu #site-navigation ul.dropdown, #site-header-menu #site-navigation .menu > ul li.active").children('.active');
@@ -304,7 +279,7 @@ jQuery('.progress').each(function(){
 /* Tab
 /*------------------------------------------------------------------------------*/ 
 
-$('.ttm-tabs').each(function() {
+$(document).find('.ttm-tabs').each(function() {
     $(this).children('.content-tab').children().hide();
     $(this).children('.content-tab').children().first().show();
     $(this).find('.tabs').children('li').on('click', function(e) {  
@@ -316,6 +291,18 @@ $('.ttm-tabs').each(function() {
         e.preventDefault();
     });
 });
+jQuery( window ).load(function() 
+   { 
+    jQuery(document).find('.tabs').children('li').on('click', function(e) {  
+   
+    var liActive = jQuery(this).index(),
+        contentActive = jQuery(this).siblings().removeClass('active').parents('.ttm-tabs').children('.content-tab').children().eq(liActive);
+    contentActive.addClass('active').fadeIn('slow');
+    contentActive.siblings().removeClass('active');
+    jQuery(this).addClass('active').parents('.ttm-tabs').children('.content-tab').children().eq(liActive).siblings().hide();
+    e.preventDefault();
+});
+});
 
 
 /*------------------------------------------------------------------------------*/
@@ -323,9 +310,10 @@ $('.ttm-tabs').each(function() {
 /*------------------------------------------------------------------------------*/
 
 /*https://www.antimath.info/jquery/quick-and-simple-jquery-accordion/*/
-$('.toggle').find('.toggle-content').css('display','none');
-$('.toggle').eq(0).addClass('active').find('.toggle-content').css('display','block');
-$('.accordion .toggle-title').on('click', function(){
+$(document).find('.toggle').find('.toggle-content').css('display','none');
+$(document).find('.toggle').eq(0).addClass('active').find('.toggle-content').css('display','block');
+$(document).on('click', '.accordion .toggle-title',function(){
+ 
     $(this).siblings('.toggle-content').slideToggle('fast');
     $(this).parent().toggleClass('active');
     $(this).parent().siblings().children('.toggle-content:visible').slideUp('fast');
@@ -591,7 +579,7 @@ $(".portfolio-img-slide").owlCarousel({
 });
 
 
-jQuery( document ).ready(function($) 
+jQuery( window ).load(function($) 
 {    
     if( jQuery('body').hasClass('ttm-one-page-site') ){
         var sections = jQuery('.ttm-row, #tm-header-slider'),
