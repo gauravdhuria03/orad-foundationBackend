@@ -56,7 +56,7 @@ const config = {
 		db: {
 			user: 'mongoAdmin',
 			password: 'changeMe',
-			url:'mongodb://127.0.0.1:27017/oradFoundation?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@orad@'
+			url:'mongodb://127.0.0.1:27017/oradFoundation?ssl=false&retrywrites=false&maxIdleTimeMS=120000&appName=@orad@'
 			//url: 'mongodb://orad:6bNdzStVgS43olgUeaVmpsr2G7tCTx3lDhFMRVsCQyrTo11RVN4JGvADfTd2wkxjJL70u6MDFlRK4B5o3m65ig%3D%3D@orad.mongo.cosmos.azure.com:10255/oradFoundation?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@orad@'
 		},
 		baseUrl: 'http://3.138.155.186:5006',
