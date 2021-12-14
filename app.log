@@ -810,3 +810,6 @@
 {"name":"Demo Project","hostname":"DESKTOP-8K3B6H8","pid":15628,"level":30,"msg":"Configuring db in mode","time":"2021-07-26T17:37:13.815Z","v":0}
 {"name":"Demo Project","hostname":"DESKTOP-8K3B6H8","pid":21456,"level":30,"msg":"Configuring db in mode","time":"2021-11-20T16:56:45.250Z","v":0}
 {"name":"Demo Project","hostname":"DESKTOP-8K3B6H8","pid":6820,"level":30,"msg":"Configuring db in mode","time":"2021-11-20T17:00:27.468Z","v":0}
+{"name":"Demo Project","hostname":"DESKTOP-8K3B6H8","pid":276,"level":30,"msg":"Configuring db in mode","time":"2021-12-04T16:52:22.860Z","v":0}
+{"name":"Demo Project","hostname":"DESKTOP-8K3B6H8","pid":15800,"level":30,"msg":"Configuring db in mode","time":"2021-12-14T15:53:13.892Z","v":0}
+{"name":"Demo Project","hostname":"DESKTOP-8K3B6H8","pid":24500,"level":30,"msg":"Configuring db in mode","time":"2021-12-14T16:02:24.244Z","v":0}
