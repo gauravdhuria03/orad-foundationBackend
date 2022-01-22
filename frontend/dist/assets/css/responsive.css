@@ -885,7 +885,7 @@
 }
 
 @media (max-width: 767px){
-
+	.site-branding .img-center{ max-height: 55px; }
 	/* ttm-search-overlay */
 	.ttm-search-overlay .ttm-search-outer .ttm-form-title{ font-size: 26px; line-height: 40px; }
 	.ttm-search-overlay .ttm-search-outer{ border: none; }
@@ -998,7 +998,7 @@
 @media (max-width: 575px){
 
 	.site-branding img{ max-height: 33px; }
-
+	
 	.ttm-fid-border .row > [class*='col-']:not(:last-child) { border-bottom: 1px solid ; }
 	.ttm-facts-colum-sep .col-md-3{ padding: 10px 0 0; }
 	.ttm-fid-view-topicon{ padding: 0; }
