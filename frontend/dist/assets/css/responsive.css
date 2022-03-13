@@ -885,7 +885,7 @@
 }
 
 @media (max-width: 767px){
-	.site-branding .img-center{ max-height: 55px; }
+	.site-branding .img-center{ max-height: 98px; }
 	/* ttm-search-overlay */
 	.ttm-search-overlay .ttm-search-outer .ttm-form-title{ font-size: 26px; line-height: 40px; }
 	.ttm-search-overlay .ttm-search-outer{ border: none; }
